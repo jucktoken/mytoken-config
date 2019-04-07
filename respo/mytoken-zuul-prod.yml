@@ -4,9 +4,9 @@ spring:
   boot:
     admin:
       client:
-        url: http://192.168.110.133:8084
+        url: http://192.168.110.138:8084
   zipkin:
-    base-url: http://192.168.110.133:9411
+    base-url: http://192.168.110.138:9411
 
 server:
   port: 8769
@@ -14,7 +14,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.110.133:8761/eureka/
+      defaultZone: http://192.168.110.138:8761/eureka/
 
 management:
   endpoint:
