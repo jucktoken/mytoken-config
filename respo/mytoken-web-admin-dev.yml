@@ -1,25 +1,22 @@
 spring:
   application:
-    name: mytoken-config
+    name: mytoken-web-admin
   boot:
     admin:
       client:
         url: http://localhost:8084
-  cloud:
-    config:
-      label: master
-      server:
-        git:
-          uri: https://github.com/jucktoken/mytoken-config
-          search-paths: respo
-          username: 974674855@qq.com
-          password: zhang10903
   zipkin:
     base-url: http://localhost:9411
 
 server:
-  port: 8888
+  port: 8601
 
+thymeleaf:
+  cache: false
+  mode: LEGACYHTML5
+  encoding: UTF-8
+  servlet:
+    content-type: text/html
 eureka:
   client:
     serviceUrl:

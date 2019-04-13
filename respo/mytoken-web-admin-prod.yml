@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: mytoken-web-admin
+  boot:
+    admin:
+      client:
+        url: http://192.168.110.138:8084
+  zipkin:
+    base-url: http://192.168.110.138:9411
+
+server:
+  port: 8601
+  
+thymeleaf:
+  cache: false
+  mode: LEGACYHTML5
+  encoding: UTF-8
+  servlet:
+    content-type: text/html
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.110.138:8761/eureka/,http://192.168.110.138:8861/eureka/,http://192.168.110.138:8961/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
