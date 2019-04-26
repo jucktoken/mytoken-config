@@ -1,12 +1,8 @@
 spring:
   application:
     name: mytoken-service-posts
-  boot:
-    admin:
-      client:
-        url: http://192.168.110.138:8084
-  zipkin:
-    base-url: http://192.168.110.138:9411
+
+
   datasource:
     druid:
       url: jdbc:mysql://192.168.110.137:3306/itoken-service-posts?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -25,19 +21,19 @@ server:
 mybatis:
   type-aliases-package: com.juck.mytoken.common.domain
   mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
 feign:
   hystrix:
     enabled: true
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8861/eureka/,http://localhost:8961/eureka/
 
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: health,info
+redis:
+  lettuce:
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1ms
+      min-idle: 0
+  sentinel:
+    master: mymaster
+    nodes: 192.168.110.137:26379,192.168.110.137:26380,192.168.110.137:26381
