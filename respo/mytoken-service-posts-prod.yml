@@ -1,6 +1,16 @@
 spring:
   application:
     name: mytoken-service-posts
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.110.137:26379,192.168.110.137:26380,192.168.110.137:26381
 
 
   datasource:
@@ -24,16 +34,6 @@ mybatis:
   configuration:
     cache-enabled: true
 
-redis:
-    lettuce:
-        pool:
-          max-active: 8
-          max-idle: 8
-          max-wait: -1ms
-          min-idle: 0
-    sentinel:
-        master: mymaster
-        nodes: 192.168.110.137:26379,192.168.110.137:26380,192.168.110.137:26381
 
 
 
