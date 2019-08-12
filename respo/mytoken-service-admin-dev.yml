@@ -16,7 +16,7 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
 
 server:
-  port: 8503
+  port: 8504
 
 mybatis:
   type-aliases-package: com.juck.mytoken.common.domain
