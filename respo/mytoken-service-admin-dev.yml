@@ -15,17 +15,3 @@ spring:
       # MySQL 8.x: com.mysql.cj.jdbc.Driver
       driver-class-name: com.mysql.jdbc.Driver
 
-server:
-  port: 8504
-
-mybatis:
-  type-aliases-package: com.juck.mytoken.common.domain
-  mapper-locations: classpath:mapper/*.xml
-feign:
-  hystrix:
-    enabled: true
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
